@@ -586,6 +586,15 @@ class Timesheets_model extends Crud_model {
         }
     }
     
+    
+    function months_in_project_with_timer($project_id) {
+        $timesheet_table = $this->db->prefixTable('project_time');
+
+        $sql = "SELECT COUNT(DISTINCT DATE_FORMAT(start_time, '%Y-%m')) AS total_months FROM $timesheet_table WHERE $timesheet_table.deleted=0 AND $timesheet_table.project_id=$project_id";
+
+        return $this->db->query($sql)->getRow()->total_months;
+    }
+    
     function user_has_any_open_timer_on_this_task($task_id, $user_id) {
         $timesheet_table = $this->db->prefixTable('project_time');
 

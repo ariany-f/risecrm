@@ -18,6 +18,11 @@
     </ul>
 
     <div class="tab-content">
+        <?php if($has_timesheet_in_different_months >= 2): ?>
+        <div id="project-tickets-warning" style="padding: 8px 12px;color: red;font-weight: 600; border-radius:10px; border:1px solid red;margin-top: 12px;margin-left: 8px; margin-right: 8px;background: #ffd6d6;">
+            Atenção! Tem registro de horário em meses diferentes
+        </div>
+        <?php endif; ?>
         <div role="tabpanel" class="tab-pane fade" id="timesheet-details">
             <div class="table-responsive">
                 <table id="project-timesheet-table" class="display" width="100%">  

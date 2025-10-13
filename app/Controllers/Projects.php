@@ -2600,6 +2600,8 @@ class Projects extends Security_Controller {
 
         $view_data["custom_field_headers"] = $this->Custom_fields_model->get_custom_field_headers_for_table("timesheets", $this->login_user->is_admin, $this->login_user->user_type);
         $view_data["custom_field_filters"] = $this->Custom_fields_model->get_custom_field_filters("timesheets", $this->login_user->is_admin, $this->login_user->user_type);
+        
+        $view_data['has_timesheet_in_different_months'] = $this->Timesheets_model->months_in_project_with_timer($project_id);
 
         return $this->template->view("projects/timesheets/index", $view_data);
     }
