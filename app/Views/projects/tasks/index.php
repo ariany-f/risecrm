@@ -108,7 +108,7 @@ foreach ($task_statuses as $status) {
             {title: '<i data-feather="menu" class="icon-16"></i>', visible: optionVisibility, "class": "text-center option " + optionColumnClass}
             ],
             printColumns: combineCustomFieldsColumns([1, 2, 4, 6, 7, 12], '<?php echo $custom_field_headers; ?>'),
-            xlsColumns: combineCustomFieldsColumns([1, 2, 4, 6, 7, 12], '<?php echo $custom_field_headers; ?>'),
+            xlsColumns: combineCustomFieldsColumns([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], '<?php echo $custom_field_headers; ?>'),
             summation: [{column: 15, dataType: 'time'}, {column: 16, dataType: 'time'}],
             rowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
             $('td:eq(0)', nRow).attr("style", "border-left:5px solid " + aData[0] + " !important;");
